@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Matrimonial - Top 10 Marriage Bureaus in Delhi</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* CUSTOM COLOR PALETTE */
+    :root {
+      --royal-burgundy: #6b1e3f;
+      --royal-light-burgundy: #a84865;
+      --gold-accent: #d4af37;
+      --pink-bg: #fdecef;
+      --dark-text: #2a1a1f;
+      --gray-muted: #6b6b6b;
+      --btn-hover-gold: #c59d26;
+      --scrollbar-thumb: #a84865;
+    }
+    /* Reset & base */
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--pink-bg);
+      color: var(--dark-text);
+      scroll-behavior: smooth;
+    }
+    a, button {
+      cursor: pointer;
+      user-select: none;
+    }
+    /* Scrollbar Hidden for horizontal profile scroll */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+    }
+    /* Navigation */
+    header {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 3px 7px rgb(0 0 0 / 0.3);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    nav.desktop-menu {
+      display: flex;
+      gap: 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav.desktop-menu a {
+      color: var(--pink-bg);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    nav.desktop-menu a:hover,
+    nav.desktop-menu a:focus-visible {
+      color: var(--gold-accent);
+    }
+    nav.desktop-menu a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      transition: width 0.3s ease;
+    }
+    nav.desktop-menu a:hover::after,
+    nav.desktop-menu a:focus-visible::after {
+      width: 100%;
+    }
+    /* Mobile menu button */
+    #menuToggle {
+      background: none;
+      border: none;
+      color: var(--pink-bg);
+      display: none;
+    }
+    #menuToggle svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    /* Mobile menu */
+    nav.mobile-menu {
+      background: var(--royal-burgundy);
+      color: var(--pink-bg);
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid var(--gold-accent);
+      font-weight: 600;
+    }
+    nav.mobile-menu a {
+      color: var(--pink-bg);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--royal-light-burgundy);
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    nav.mobile-menu a:hover,
+    nav.mobile-menu a:focus-visible {
+      color: var(--gold-accent);
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://placehold.co/1920x600/6b1e3f/a84865?text=Royal+Matrimonial+Hero+Image') center/cover no-repeat;
+      position: relative;
+      padding: 6rem 1rem 4rem;
+      color: var(--pink-bg);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(107, 30, 63, 0.75);
+      z-index: 0;
+      border-radius: 10px;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 10;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.6);
+    }
+    .search-form {
+      background: rgba(255 255 255 / 0.85);
+      border-radius: 8px;
+      max-width: 860px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0 6px 25px rgb(0 0 0 / 0.2);
+    }
+    .search-form input[type="text"],
+    .search-form select {
+      flex: 1 1 140px;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #cfcfcf;
+      border-radius: 6px;
+      transition: border-color 0.3s ease;
+      color: var(--dark-text);
+      font-weight: 500;
+    }
+    .search-form input[type="text"]:focus,
+    .search-form select:focus {
+      border-color: var(--gold-accent);
+      outline: none;
+      box-shadow: 0 0 8px var(--gold-accent);
+    }
+    .search-form button {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      font-weight: 700;
+      padding: 0.7rem 2rem;
+      border-radius: 8px;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      flex-grow: 0;
+      width: max-content;
+      user-select: none;
+    }
+    .search-form button:hover,
+    .search-form button:focus-visible {
+      background-color: var(--btn-hover-gold);
+      box-shadow: 0 6px 16px rgba(197, 157, 38, 0.8);
+      outline-offset: 2px;
+      outline-color: var(--royal-burgundy);
+      outline-style: solid;
+      outline-width: 2px;
+    }
+    /* Verified Profiles */
+    .verified-profiles {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    .verified-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .verified-header div h2 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--dark-text);
+      max-width: 600px;
+      line-height: 1.1;
+    }
+    .verified-header div p {
+      color: var(--royal-burgundy);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .btn-view-all {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      font-weight: 700;
+      padding: 0.5rem 1.8rem;
+      border-radius: 6px;
+      border: 2px solid var(--royal-burgundy);
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      min-width: 140px;
+      white-space: nowrap;
+    }
+    .btn-view-all:hover,
+    .btn-view-all:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      border-color: var(--gold-accent);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--gold-accent);
+      outline-width: 3px;
+    }
+    .profile-scroll {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 0.5rem;
+      scroll-padding-left: 1rem;
+    }
+    .profile-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .profile-card {
+      background: var(--pink-bg);
+      border-radius: 12px;
+      width: 240px;
+      box-shadow: 0 4px 10px rgb(107 30 63 / 0.15);
+      transition: transform 0.3s ease, box-shadow 0.25s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .profile-card:hover,
+    .profile-card:focus-within {
+      box-shadow: 0 10px 22px rgba(107, 30, 63, 0.3);
+      transform: translateY(-8px);
+    }
+    .profile-img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--royal-burgundy);
+    }
+    .profile-info {
+      padding: 0.9rem 1rem 1.2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .profile-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      color: var(--dark-text);
+      letter-spacing: 0.03em;
+      text-transform: capitalize;
+    }
+    .profile-details {
+      font-size: 0.9rem;
+      color: var(--gray-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .profile-desc {
+      font-size: 0.87rem;
+      color: #4a4a4a;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      display: -webkit-box;-webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .btn-profile-view {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      font-weight: 700;
+      padding: 0.4rem 0;
+      border-radius: 6px;
+      text-align: center;
+      border: none;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .btn-profile-view:hover,
+    .btn-profile-view:focus-visible {
+      background-color: var(--btn-hover-gold);
+      box-shadow: 0 6px 16px rgba(197, 157, 38, 0.8);
+      outline-offset: 2px;
+      outline-color: var(--royal-burgundy);
+      outline-style: solid;
+      outline-width: 2px;
+    }
+    /* Why Trust Section */
+    .trust-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .trust-text h2 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--dark-text);
+      line-height: 1.1;
+    }
+    .trust-text p {
+      font-weight: 400;
+      color: #4c4c4c;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      max-width: 530px;
+    }
+    .trust-values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem 3rem;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+    .trust-value-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--dark-text);
+    }
+    .trust-value-item svg {
+      flex-shrink: 0;
+      width: 1.3rem;
+      height: 1.3rem;
+      stroke-width: 2;
+      stroke: var(--gold-accent);
+      fill: none;
+    }
+    .btn-trust-more {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 0.75rem 2.5rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 2px solid var(--royal-burgundy);
+      letter-spacing: 1.1px;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .btn-trust-more:hover,
+    .btn-trust-more:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      border-color: var(--gold-accent);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--gold-accent);
+      outline-width: 3px;
+    }
+    /* Video container */
+    .trust-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      box-shadow: 0 7px 25px rgba(107, 30, 63, 0.25);
+      overflow: hidden;
+    }
+    .trust-video-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      filter: brightness(0.85);
+      transition: filter 0.3s ease;
+    }
+    .trust-video-wrapper:hover img {
+      filter: brightness(1);
+    }
+    /* Play button */
+    .play-video-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background-color: var(--gold-accent);
+      border-radius: 50%;
+      color: var(--royal-burgundy);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 3px 15px rgba(212, 175, 55, 0.7);
+      transition: background-color 0.3s ease;
+      border: none;
+      user-select: none;
+    }
+    .play-video-btn:hover,
+    .play-video-btn:focus-visible {
+      background-color: var(--btn-hover-gold);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+      cursor: pointer;
+    }
+    /* Steps Section */
+    .steps-section {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 4rem 1rem 6rem;
+      text-align: center;
+    }
+    .steps-section h2 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .steps-section p {
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    .steps-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 2.2rem 1.5rem;
+      font-weight: 600;
+    }
+    .step-circle {
+      background-color: var(--pink-bg);
+      color: var(--royal-burgundy);
+      font-weight: 900;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.9rem;
+      margin: 0 auto 0.6rem;
+      box-shadow: 0 4px 18px rgb(0 0 0 / 0.12);
+      user-select: none;
+    }
+    .step-label {
+      font-size: 1.05rem;
+      max-width: 130px;
+      margin: 0 auto;
+      user-select: none;
+    }
+    .btn-register-step {
+      margin-top: 3rem;
+      background-color: var(--gold-accent);
+      border: none;
+      padding: 1rem 3rem;
+      font-weight: 700;
+      color: var(--royal-burgundy);
+      border-radius: 8px;
+      letter-spacing: 1.1px;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.8);
+    }
+    .btn-register-step:hover,
+    .btn-register-step:focus-visible {
+      background-color: var(--btn-hover-gold);
+      box-shadow: 0 6px 20px rgba(197, 157, 38, 0.9);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+      cursor: pointer;
+    }
+    /* Plans Section */
+    .plans-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    .plans-section h2 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark-text);
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .plan-card {
+      background-color: var(--pink-bg);
+      border: 2px solid var(--royal-light-burgundy);
+      border-radius: 14px;
+      box-shadow: 0 5px 15px rgb(107 30 63 / 0.1);
+      padding: 2rem 1.8rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+    .plan-card:hover,
+    .plan-card:focus-within {
+      box-shadow: 0 10px 25px rgba(107, 30, 63, 0.25);
+      border-color: var(--gold-accent);
+      cursor: pointer;
+    }
+    .plan-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+      color: var(--royal-burgundy);
+      user-select: none;
+      text-align: center;
+    }
+    .plan-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      margin-bottom: 1rem;
+      text-align: center;
+      user-select: none;
+    }
+    .plan-features {
+      list-style: disc;
+      padding-left: 1.4rem;
+      color: #5a4b4b;
+      font-weight: 500;
+      font-size: 0.93rem;
+      line-height: 1.25;
+      margin-bottom: 1.8rem;
+      user-select: none;
+    }
+    .btn-register-plan {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      border-radius: 10px;
+      padding: 0.7rem 1.8rem;
+      font-weight: 700;
+      border: 2px solid var(--royal-burgundy);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      user-select: none;
+      text-align: center;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-register-plan:hover,
+    .btn-register-plan:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      border-color: var(--gold-accent);
+      outline-offset: 3px;
+      outline-color: var(--gold-accent);
+      outline-style: solid;
+      outline-width: 3px;
+      cursor: pointer;
+    }
+    /* Customer Stories Section */
+    .customer-stories {
+      background-color: var(--pink-bg);
+      padding: 4rem 1rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      user-select: none;
+    }
+    .customer-stories h2 {
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: var(--dark-text);
+      margin-bottom: 2.4rem;
+      letter-spacing: 0.05em;
+    }
+    /* Tab Buttons */
+    .stories-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .story-tab-btn {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 0.45rem 1rem;
+      font-weight: 700;
+      border-radius: 20px;
+      border: 2px solid var(--royal-burgundy);
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .story-tab-btn.active,
+    .story-tab-btn:hover,
+    .story-tab-btn:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      border-color: var(--gold-accent);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-color: var(--gold-accent);
+      outline-width: 2px;
+      cursor: pointer;
+    }
+    .story-content {
+      display: none;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .story-content.active {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    @media(min-width: 768px) {
+      .story-content.active {
+        flex-direction: row;
+      }
+    }
+    .story-text {
+      flex: 1 1 400px;
+      color: #4a4a4a;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+    .story-text h3 {
+      color: var(--royal-burgundy);
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      user-select: text;
+    }
+    .btn-read-more-stories {
+      margin-top: 1.4rem;
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 0.6rem 2.5rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      letter-spacing: 0.06em;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      display: inline-block;
+    }
+    .btn-read-more-stories:hover,
+    .btn-read-more-stories:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      cursor: pointer;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+    }
+    /* Story Video */
+    .story-video-wrapper {
+      flex: 1 1 350px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(107, 30, 63, 0.2);
+      aspect-ratio: 16 / 9;
+    }
+    .story-video-wrapper iframe,
+    .story-video-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+      user-select: none;
+    }
+    /* WhatsApp Connect Section */
+    .whatsapp-section {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 3rem 1rem 4rem;
+      user-select: none;
+      position: relative;
+    }
+    .whatsapp-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .whatsapp-text {
+      flex: 1 1 350px;
+      max-width: 700px;
+    }
+    .whatsapp-text h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    .whatsapp-text p {
+      font-weight: 400;
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 1.8rem;
+      color: #f5e7e7;
+      line-height: 1.4;
+    }
+    .btn-wa-chat {
+      background-color: var(--gold-accent);
+      border-radius: 50px;
+      padding: 0.8rem 2rem;
+      font-weight: 700;
+      color: var(--royal-burgundy);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.8);
+      user-select: none;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-wa-chat svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--royal-burgundy);
+    }
+    .btn-wa-chat:hover,
+    .btn-wa-chat:focus-visible {
+      background-color: var(--btn-hover-gold);
+      box-shadow: 0 8px 20px rgba(197, 157, 38, 0.9);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+      cursor: pointer;
+    }
+    .whatsapp-img-wrapper {
+      flex: 1 1 250px;
+      max-width: 260px;
+      position: relative;
+    }
+    .whatsapp-img-wrapper img {
+      width: 100%;
+      border-radius: 50%;
+      border: 8px solid var(--pink-bg);
+      box-shadow: 0 6px 20px rgba(107,30,63,0.2);
+      object-fit: cover;
+      user-select: none;
+      background-color: var(--pink-bg);
+    }
+    .whatsapp-join-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background-color: var(--gold-accent);
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
+      cursor: pointer;
+      border: 4px solid var(--pink-bg);
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    .whatsapp-join-btn svg {
+      fill: var(--royal-burgundy);
+      width: 28px;
+      height: 28px;
+    }
+    .whatsapp-join-btn:hover,
+    .whatsapp-join-btn:focus-visible {
+      background-color: var(--btn-hover-gold);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+    }
+    /* Explore Profiles Section */
+    .explore-section {
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      padding: 4rem 1rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      border-radius: 12px;
+    }
+    .explore-section h3 {
+      font-weight: 800;
+      font-size: 1.9rem;
+      margin-bottom: 1.8rem;
+      user-select: none;
+    }
+    .filter-form {
+      max-width: 950px;
+      margin-bottom: 2.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      justify-content: flex-start;
+    }
+    .filter-form select {
+      min-width: 140px;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--royal-burgundy);
+      outline-offset: 0;
+      appearance: none;
+      background-color: var(--pink-bg);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgb(255 255 255 / 0.75);
+      transition: box-shadow 0.3s ease;
+    }
+    .filter-form select:focus {
+      outline: none;
+      box-shadow: 0 0 8px var(--gold-accent);
+    }
+    .filter-form button {
+      background: var(--gold-accent);
+      color: var(--royal-burgundy);
+      font-weight: 700;
+      padding: 0.6rem 2rem;
+      border-radius: 12px;
+      border: none;
+      transition: background-color 0.3s ease;
+      letter-spacing: 0.04em;
+      min-width: 140px;
+      user-select: none;
+    }
+    .filter-form button:hover,
+    .filter-form button:focus-visible {
+      background-color: var(--btn-hover-gold);
+      box-shadow: 0 6px 20px rgba(197, 157, 38, 0.9);
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+      cursor: pointer;
+    }
+    /* Community Buttons */
+    .community-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      font-weight: 600;
+    }
+    .community-button {
+      padding: 0.45rem 1.3rem;
+      border-radius: 9999px;
+      border: none;
+      user-select: none;
+      font-size: 0.9rem;
+      color: var(--royal-burgundy);
+      background-color: var(--pink-bg);
+      box-shadow: 0 3px 8px rgb(255 255 255 / 0.95);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+    .community-button:hover,
+    .community-button:focus-visible {
+      background-color: var(--btn-hover-gold);
+      color: var(--royal-burgundy);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 2px;
+      cursor: pointer;
+    }
+    /* Featured Communities */
+    .featured-communities {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      justify-content: start;
+    }
+    .featured-communities span {
+      display: inline-block;
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      padding: 0.45rem 1.4rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .featured-communities span:hover,
+    .featured-communities span:focus-visible {
+      background-color: var(--btn-hover-gold);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 2px;
+    }
+    /* Top Matrimonial Sites Info Section */
+    .top-sites-section {
+      max-width: 920px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      user-select: none;
+    }
+    .top-sites-section h2 {
+      font-weight: 900;
+      font-size: 2.7rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--dark-text);
+    }
+    .site-info-box {
+      border: 2px solid var(--royal-light-burgundy);
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.8rem;
+      background-color: var(--pink-bg);
+      box-shadow: 0 4px 15px rgb(107 30 63 / 0.1);
+      color: var(--dark-text);
+      font-weight: 500;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .site-info-box:hover,
+    .site-info-box:focus-within {
+      border-color: var(--gold-accent);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      cursor: pointer;
+    }
+    .site-info-box h3 {
+      font-weight: 900;
+      font-size: 1.45rem;
+      margin-bottom: 0.7rem;
+      user-select: text;
+    }
+    .site-info-box ul {
+      list-style: disc;
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+      color: #5a4b4b;
+    }
+    .site-info-box p {
+      line-height: 1.4;
+      font-weight: 400;
+    }
+    .btn-top-read {
+      margin-top: 1rem;
+      background-color: var(--royal-burgundy);
+      color: var(--pink-bg);
+      border: none;
+      padding: 0.7rem 2.8rem;
+      font-weight: 700;
+      border-radius: 8px;
+      letter-spacing: 0.06em;
+      user-select: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 0.3s ease;
+    }
+    .btn-top-read:hover,
+    .btn-top-read:focus-visible {
+      background-color: var(--gold-accent);
+      color: var(--royal-burgundy);
+      cursor: pointer;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: var(--royal-burgundy);
+      outline-width: 3px;
+    }
+    /* FAQ Section */
+    .faq-section {
+      max-width: 720px;
+      margin: 5rem auto 6rem;
+      padding: 0 1rem;
+      user-select: none;
+    }
+    .faq-section h2 {
+      font-weight: 900;
+      font-size: 2.8rem;
+      margin-bottom: 3.2rem;
+      color: var(--dark-text);
+      text-align: center;
+    }
+    details {
+      border: 2px solid var(--royal-light-burgundy);
+      border-radius: 10px;
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 1.25rem;
+      background-color: var(--pink-bg);
+      box-shadow: 0 5px 15px rgb(107 30 63 / 0.12);
+      transition: border-color 0.3s ease;
+      cursor: pointer;
+    }
+    details[open] {
+      border-color: var(--gold-accent);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+    }
+    summary {
+      font-weight: 700;
+      font-size: 1.2rem;
+      list-style: none;
+      outline: none;
+      cursor: pointer;
+      color: var(--royal-burgundy);
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    summary::before {
+      content: "▶";
+      color: var(--gold-accent);
+      display: inline-block;
+      width: 1.3rem;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      margin-right: 0.6rem;
+      font-weight: 900;
+      user-select: none;
+    }
+    details[open] summary::before {
+      transform: rotate(90deg);
+      color: var(--royal-burgundy);
+    }
+    details p {
+      margin-top: 0.75rem;
+      font-weight: 400;
+      color: #4b4b4b;
+      line-height: 1.5;
+      user-select: text;
+    }
+    /* Footer */
+    footer {
+      background-color: var(--dark-text);
+      color: var(--pink-bg);
+      padding: 4rem 2rem 3.5rem;
+      position: relative;
+      user-select: none;
+    }
+    footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 3.5rem;
+      font-size: 0.95rem;
+    }
+    footer .footer-col h3,
+    footer .footer-col h4 {
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      user-select: text;
+      margin-bottom: 1rem;
+      color: var(--pink-bg);
+    }
+    footer .footer-col p,
+    footer .footer-col address {
+      font-weight: 500;
+      line-height: 1.5;
+      color: #e9d9d9;
+      letter-spacing: 0.02em;
+      user-select: text;
+    }
+    footer .footer-col address p {
+      margin-bottom: 0.5rem;
+    }
+    footer .footer-links,
+    footer .footer-social {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer .footer-links li {
+      margin-bottom: 0.55rem;
+    }
+    footer .footer-links a {
+      color: var(--pink-bg);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      user-select: text;
+    }
+    footer .footer-links a:hover,
+    footer .footer-links a:focus-visible {
+      color: var(--gold-accent);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-color: var(--gold-accent);
+      outline-width: 2px;
+    }
+    footer .footer-social a {
+      color: var(--pink-bg);
+      margin-right: 1.3rem;
+      transition: color 0.3s ease;
+    }
+    footer .footer-social a:hover,
+    footer .footer-social a:focus-visible {
+      color: var(--gold-accent);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-color: var(--gold-accent);
+      outline-width: 2px;
+    }
+    footer .footer-social svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      user-select: none;
+    }
+    /* Vertical Royal Matrimonial brand on left side */
+    footer .vertical-brand {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-weight: 900;
+      font-size: 1.7rem;
+      letter-spacing: 0.2em;
+      color: var(--pink-bg);
+      user-select: none;
+      justify-self: start;
+      align-self: center;
+      padding-left: 8px;
+      border-left: 3px solid var(--gold-accent);
+      user-select: none;
+    }
+    /* Copyright */
+    footer .copyright {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #726363cc;
+      user-select: none;
+      letter-spacing: 0.03em;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .trust-section {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .trust-video-wrapper {
+        aspect-ratio: 4 / 3 !important;
+      }
+    }
+    @media (max-width: 768px) {
+      nav.desktop-menu {
+        display: none;
+      }
+      #menuToggle {
+        display: block;
+      }
+      nav.mobile-menu {
+        display: flex;
+      }
+      .trust-section {
+        padding: 0 1rem !important;
+      }
+      .customer-stories h2 {
+        font-size: 2rem;
+      }
+      .story-content.active {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      .story-video-wrapper {
+        aspect-ratio: 16/9 !important;
+      }
+      footer .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        font-size: 0.9rem;
+        padding-bottom: 2rem;
+      }
+      footer .vertical-brand {
+        display: none;
+      }
+    }
+    @media (max-width: 480px) {
+      .steps-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .filter-form {
+        justify-content: center;
+      }
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header role="banner" class="font-sans">
+    <div class="nav-container">
+      <div class="logo" aria-label="Royal Matrimonial Logo">
+        Royal Matrimonial
+      </div>
+      <nav class="desktop-menu" aria-label="Primary Navigation">
+        <a href="#home" tabindex="0">Home</a>
+        <a href="#profiles" tabindex="0">Profiles</a>
+        <a href="#plans" tabindex="0">Plans</a>
+        <a href="#stories" tabindex="0">Success Stories</a>
+        <a href="#contact" tabindex="0">Contact</a>
+      </nav>
+      <button id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
+      <a href="#home" tabindex="0">Home</a>
+      <a href="#profiles" tabindex="0">Profiles</a>
+      <a href="#plans" tabindex="0">Plans</a>
+      <a href="#stories" tabindex="0">Success Stories</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" role="region" aria-label="Hero Section - Find Your Perfect Life Partner">
+    <div class="hero-content">
+      <h1>Top 10 Marriage Bureaus in Delhi</h1>
+      <p>Search thousands of verified profiles from trusted marriage bureaus across Delhi, Mumbai & other major cities.</p>
+      <form class="search-form" aria-label="Search Matrimonial Profiles">
+        <input type="text" name="ageFrom" placeholder="Age From" aria-label="Enter Age From" pattern="[0-9]*" inputmode="numeric" />
+        <input type="text" name="ageTo" placeholder="Age To" aria-label="Enter Age To" pattern="[0-9]*" inputmode="numeric" />
+        <select name="religion" aria-label="Select Religion" required>
+          <option value="" disabled selected>Select Religion</option>
+          <option>Hindu</option>
+          <option>Muslim</option>
+          <option>Christian</option>
+          <option>Sikh</option>
+          <option>Jain</option>
+          <option>Others</option>
+        </select>
+        <button type="submit" aria-label="Submit Search">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Verified Profiles Section -->
+  <section id="profiles" class="verified-profiles" aria-labelledby="verified-title" role="region" tabindex="-1">
+    <div class="verified-header">
+      <div>
+        <h2 id="verified-title">100,000+ Verified Profiles of Brides & Grooms From Delhi</h2>
+        <p>Join the largest community of trusted matrimonial profiles.</p>
+        <button class="btn-view-all" aria-label="View all profiles">View All Profiles</button>
+      </div>
+    </div>
+    <div class="profile-scroll scrollbar-hide" role="list" aria-label="Featured Profiles">
+      <!-- Profile Card 1 -->
+      <article class="profile-card" role="listitem" tabindex="0">
+        <img src="https://i.ibb.co/jPBD4qxw/Gemini-Generated-Image-pj7fthpj7fthpj7f.png"
+          alt="Profile photo of Tanya, a 28 year old Hindu woman from Delhi" 
+          class="profile-img"
+          onerror="this.onerror=null;this.src='https://placehold.co/240x320?text=No+Image';"
+          loading="lazy"
+        />
+        <div class="profile-info">
+          <h3 class="profile-name">Tanya</h3>
+          <p class="profile-details">Age: 28 | Hindu | Delhi</p>
+          <p class="profile-desc">Looking for a kind and caring partner from a good family.</p>
+          <button class="btn-profile-view" aria-label="View Tanya's full profile">View Profile</button>
+        </div>
+      </article>
+      <!-- Profile Card 2 -->
+      <article class="profile-card" role="listitem" tabindex="0">
+        <img src="https://i.ibb.co/jPMZHYGv/unnamed.png" 
+          alt="Profile photo of Devansh, a 30 year old Sikh man from Delhi" 
+          class="profile-img"
+          onerror="this.onerror=null;this.src='https://placehold.co/240x320?text=No+Image';"
+          loading="lazy"
+        />
+        <div class="profile-info">
+          <h3 class="profile-name">Devansh</h3>
+          <p class="profile-details">Age: 30 | Sikh | Delhi</p>
+          <p class="profile-desc">Professionally settled, family-oriented, seeking life partner.</p>
+          <button class="btn-profile-view" aria-label="View Devansh's full profile">View Profile</button>
+        </div>
+      </article>
+      <!-- Profile Card 3 -->
+      <article class="profile-card" role="listitem" tabindex="0">
+        <img src="https://i.ibb.co/jPMZHYGv/unnamed.png"" 
+          alt="Profile photo of Rohan, a 29 year old Hindu man from Delhi" 
+          class="profile-img"
+          onerror="this.onerror=null;this.src='https://placehold.co/240x320?text=No+Image';"
+          loading="lazy"
+        />
+        <div class="profile-info">
+          <h3 class="profile-name">Rohan</h3>
+          <p class="profile-details">Age: 29 | Hindu | Delhi</p>
+          <p class="profile-desc">Well educated, family-oriented, ready for marriage.</p>
+          <button class="btn-profile-view" aria-label="View Rohan's full profile">View Profile</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Why Trust Section -->
+  <section class="trust-section" aria-labelledby="trust-title" role="region" tabindex="-1">
+    <div class="trust-text">
+      <h2 id="trust-title">Why Trust Royal Matrimonial?</h2>
+      <p>
+        Royal Matrimonial has been serving Delhi's matrimonial needs for over a decade with a commitment to authenticity, privacy, and personalized matches. We ensure every profile is thoroughly verified, providing you peace of mind as you embark on your journey to find your perfect life partner. Our dedicated team combines technology with personalized service to create meaningful connections that last a lifetime.
+      </p>
+      <div class="trust-values" role="list">
+        <div class="trust-value-item" role="listitem">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Verified Profiles</span>
+        </div>
+        <div class="trust-value-item" role="listitem">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Privacy & Security</span>
+        </div>
+        <div class="trust-value-item" role="listitem">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Personalized Matches</span>
+        </div>
+        <div class="trust-value-item" role="listitem">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12H2" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Expert Support</span>
+        </div>
+      </div>
+      <button class="btn-trust-more" aria-label="Learn more about Royal Matrimonial">Learn More</button>
+    </div>
+    <div class="trust-video-wrapper" aria-label="Video about Royal Matrimonial">
+      <img 
+        src="https://placehold.co/800x450/a84865/fff?text=Women+in+traditional+attire+smiling+at+camera" 
+        alt="Young Indian woman wearing maroon traditional saree smiling warmly towards camera with festive background"
+      />
+      <button type="button" class="play-video-btn" aria-label="Play Video">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.752 11.168l-6.586-3.79a.75.75 0 0 0-1.14.645v7.568a.75.75 0 0 0 1.14.645l6.586-3.789a.75.75 0 0 0 0-1.28z"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Steps to Get Partner Section -->
+  <section class="steps-section" aria-labelledby="steps-title" role="region" tabindex="-1">
+    <h2 id="steps-title">Get Your Perfect Life Partner in Delhi with 5 Simple Steps</h2>
+    <p>Follow these easy steps to start your matrimonial journey efficiently and effectively.</p>
+    <div class="steps-list" role="list">
+      <div role="listitem" class="step-item">
+        <div class="step-circle">1</div>
+        <div class="step-label">Register on Site</div>
+      </div>
+      <div role="listitem" class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-label">Complete Profile</div>
+      </div>
+      <div role="listitem" class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-label">Browse Matches</div>
+      </div>
+      <div role="listitem" class="step-item">
+        <div class="step-circle">4</div>
+        <div class="step-label">Connect Safely</div>
+      </div>
+      <div role="listitem" class="step-item">
+        <div class="step-circle">5</div>
+        <div class="step-label">Start New Life</div>
+      </div>
+    </div>
+    <button class="btn-register-step" aria-label="Register now to start your matrimonial journey">Register Now</button>
+  </section>
+
+  <!-- Plans & Services Section -->
+  <section id="plans" class="plans-section" aria-labelledby="plans-title" role="region" tabindex="-1">
+    <h2 id="plans-title">Check Our Dedicated Plans & Services Package</h2>
+    <div class="plans-grid">
+      <!-- Basic Plan -->
+      <article class="plan-card" tabindex="0">
+        <h3 class="plan-title">Basic Services</h3>
+        <p class="plan-price">₹5,999 for 3 Months</p>
+        <ul class="plan-features">
+          <li>Profile Creation & Verification</li>
+          <li>Access to Basic Profiles</li>
+          <li>Standard Match Suggestions</li>
+          <li>Email & SMS Notifications</li>
+          <li>Limited Communication</li>
+        </ul>
+        <button class="btn-register-plan" aria-label="Register for Basic Services Plan">Register Now</button>
+      </article>
+      <!-- Matrimonial Plan -->
+      <article class="plan-card" tabindex="0">
+        <h3 class="plan-title">Matrimonial Services</h3>
+        <p class="plan-price">₹12,999 for 6 Months</p>
+        <ul class="plan-features">
+          <li>Includes All Basic Features</li>
+          <li>Priority Profile Listing</li>
+          <li>Direct Contact Details</li>
+          <li>Profile Assistance</li>
+          <li>Personalized Matchmaking</li>
+        </ul>
+        <button class="btn-register-plan" aria-label="Register for Matrimonial Services Plan">Register Now</button>
+      </article>
+      <!-- Elite Plan -->
+      <article class="plan-card" tabindex="0">
+        <h3 class="plan-title">Elite Services</h3>
+        <p class="plan-price">₹25,999 for 12 Months</p>
+        <ul class="plan-features">
+          <li>All Matrimonial Services Features</li>
+          <li>Personal Relationship Manager</li>
+          <li>Profile Promotion & Spotlight</li>
+          <li>Matchmaking Events Access</li>
+          <li>Premium Support & Counseling</li>
+        </ul>
+        <button class="btn-register-plan" aria-label="Register for Elite Services Plan">Register Now</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Customer Success Stories Section -->
+  <section id="stories" class="customer-stories" aria-labelledby="stories-title" role="region" tabindex="-1">
+    <h2 id="stories-title">Customer Success Stories</h2>
+    <div class="stories-tabs" role="tablist" aria-label="Customer success story categories">
+      <button class="story-tab-btn active" role="tab" aria-selected="true" aria-controls="story-1" id="tab-1" tabindex="0">Nikal Manga</button>
+      <button class="story-tab-btn" role="tab" aria-selected="false" aria-controls="story-2" id="tab-2" tabindex="-1">Deepak & Neetu</button>
+      <button class="story-tab-btn" role="tab" aria-selected="false" aria-controls="story-3" id="tab-3" tabindex="-1">UT Kusum</button>
+      <button class="story-tab-btn" role="tab" aria-selected="false" aria-controls="story-4" id="tab-4" tabindex="-1">Shiv & Madhuri</button>
+      <button class="story-tab-btn" role="tab" aria-selected="false" aria-controls="story-5" id="tab-5" tabindex="-1">Avin & Pari</button>
+    </div>
+    <!-- Stories Content -->
+    <article class="story-content active" id="story-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+      <div class="story-text">
+        <h3>Utkarsha & Vishal - Married!</h3>
+        <p>We are forever grateful to Royal Matrimonial for bringing us together. Their verification process and personalized matchmaking made our search easy and trustworthy. Thanks to the whole team for this beautiful journey.</p>
+        <button class="btn-read-more-stories" aria-label="Read more success stories">Read More Stories</button>
+      </div>
+      <div class="story-video-wrapper">
+        <img src="https://placehold.co/640x360/6b1e3f/a84865?text=Happy+Couple+Success+Story+Video" alt="Smiling happy Indian couple embracing in wedding attire, celebrating success story" loading="lazy" />
+        <button class="play-video-btn" aria-label="Play Success Story Video">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-6.586-3.79a.75.75 0 0 0-1.14.645v7.568a.75.75 0 0 0 1.14.645l6.586-3.789a.75.75 0 0 0 0-1.28z"/></svg>
+        </button>
+      </div>
+    </article>
+    <!-- Additional story panels can be added following same markup, hidden by default -->
+  </section>
+
+  <!-- WhatsApp Connect Section -->
+  <section class="whatsapp-section" aria-label="WhatsApp Connect Section" role="region" tabindex="-1">
+    <div class="whatsapp-container">
+      <div class="whatsapp-text">
+        <h3>Connect with thousands of profiles in Delhi through WhatsApp</h3>
+        <p>Instantly chat and engage with verified profiles and start your journey today.</p>
+        <button class="btn-wa-chat" aria-label="Chat on WhatsApp" onclick="window.open('https://wa.me/919876543210', '_blank', 'noopener')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.52 3.48A11.903 11.903 0 0 0 12 0 12 12 0 0 0 0 12a11.94 11.94 0 0 0 1.6 5.85l-1.6 6.153 6.38-1.57a11.901 11.901 0 0 0 10.6-10.6zM12 21.818a9.4 9.4 0 0 1-4.93-1.45l-.35-.23-3.78.93.95-3.69-.23-.37a9.43 9.43 0 0 1-1.57-5.73A9.46 9.46 0 0 1 18.8 6.18a9.4 9.4 0 0 1-6.8 15.638zm5.3-7.8c-.29-.15-1.72-.85-1.98-.95-.268-.1-.457-.15-.65.15-.19.29-.735.95-.9 1.14-.17.19-.33.22-.62.07-.29-.15-1.23-.45-2.34-1.44-.87-.78-1.46-1.7-1.63-2.02-.17-.29-.02-.45.13-.59.13-.13.29-.345.44-.51.15-.17.2-.29.3-.48.09-.19.05-.36-.03-.5-.07-.15-.65-1.57-.9-2.15-.24-.55-.47-.48-.65-.49-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48a9.4 9.4 0 0 0 1.21 3.07 4.93 4.93 0 0 1-2.23 0c.62 1.95 2.44 3.38 4.6 3.41a9.87 9.87 0 0 1-6.1 2.1c-.39 0-.78-.02-1.17-.07a13.95 13.95 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14 0-.22 0-.43-.02-.63z"/></svg>
+          Chat on WhatsApp
+        </button>
+      </div>
+      <div class="whatsapp-img-wrapper" aria-label="Community profile collage">
+        <img src="https://placehold.co/288x288/a84865/fff?text=WhatsApp+Community+Collage" alt="Circular collage of diverse matrimony profile images floating over dark burgundy background" loading="lazy" />
+        <button class="whatsapp-join-btn" aria-label="Join WhatsApp Group" onclick="window.open('https://chat.whatsapp.com/invite/linkhere', '_blank', 'noopener')">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.2.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.172.198-.298.298-.497.099-.198.05-.37-.025-.52-.075-.148-.65-1.612-.89-2.2-.242-.576-.487-.498-.67-.51l-.57-.01c-.198 0-.52.074-.792.37s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2.04c-5.455 0-9.88 4.436-9.88 9.903 0 1.742.453 3.363 1.243 4.748L2 22l5.4-1.402a9.86 9.86 0 004.6 1.103c5.454 0 9.877-4.436 9.877-9.902 0-5.467-4.423-9.902-9.877-9.902zm0 17.26a7.302 7.302 0 01-3.688-.996l-.267-.158-3.196.83.853-3.118-.174-.272a7.377 7.377 0 01-1.13-4.015c0-4.06 3.31-7.355 7.38-7.355a7.34 7.34 0 017.378 7.355c0 4.06-3.308 7.355-7.378 7.355z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Profiles & Community -->
+  <section class="explore-section" aria-labelledby="explore-title" role="region" tabindex="-1">
+    <div>
+      <h3 id="explore-title">Explore Matrimonial Profiles By</h3>
+      <form class="filter-form" aria-label="Search filters for matrimonial profiles">
+        <select aria-label="Select Religion">
+          <option selected disabled value="">Select Religion</option>
+          <option>Hindu</option>
+          <option>Muslim</option>
+          <option>Christian</option>
+          <option>Sikh</option>
+          <option>Jain</option>
+          <option>Others</option>
+        </select>
+        <select aria-label="Select Caste">
+          <option selected disabled value="">Select Caste</option>
+          <option>Brahmin</option>
+          <option>Rajput</option>
+          <option>Jat</option>
+          <option>Khatri</option>
+          <option>Gupta</option>
+        </select>
+        <select aria-label="Select Age Range">
+          <option selected disabled value="">Select Age Range</option>
+          <option>18-25</option>
+          <option>26-30</option>
+          <option>31-35</option>
+          <option>36-40</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>Community</h3>
+      <div class="community-buttons" role="list" aria-label="Community buttons">
+        <button class="community-button" aria-label="Delhi Community">Delhi</button>
+        <button class="community-button" aria-label="Mumbai Community">Mumbai</button>
+        <button class="community-button" aria-label="Bangalore Community">Bangalore</button>
+        <button class="community-button" aria-label="Chennai Community">Chennai</button>
+        <button class="community-button" aria-label="Hyderabad Community">Hyderabad</button>
+        <button class="community-button" aria-label="Kolkata Community">Kolkata</button>
+      </div>
+    </div>
+
+    <div>
+      <h3>Featured Communities</h3>
+      <div class="featured-communities" role="list" aria-label="Featured Communities">
+        <span tabindex="0" role="listitem" aria-label="Punjabi Matrimonial Community" class="community-button">Punjabi Matrimonial</span>
+        <span tabindex="0" role="listitem" aria-label="Marathi Matrimonial Community" class="community-button">Marathi Matrimonial</span>
+        <span tabindex="0" role="listitem" aria-label="Bengali Matrimonial Community" class="community-button">Bengali Matrimonial</span>
+        <span tabindex="0" role="listitem" aria-label="Gujarati Matrimonial Community" class="community-button">Gujarati Matrimonial</span>
+        <span tabindex="0" role="listitem" aria-label="Tamil Matrimonial Community" class="community-button">Tamil Matrimonial</span>
+        <span tabindex="0" role="listitem" aria-label="South Indian Matrimonial Community" class="community-button">South Indian Matrimonial</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Matrimonial Sites Info -->
+  <section class="top-sites-section" aria-labelledby="top-sites-title" role="region" tabindex="-1">
+    <h2 id="top-sites-title">List of Top Matrimonial Sites in Delhi</h2>
+    <div class="site-info-box" tabindex="0">
+      <h3>Royal Matrimonial - Best Matrimonial in Delhi</h3>
+      <ul>
+        <li>Thousands of Verified Profiles</li>
+        <li>User-Friendly Platform</li>
+        <li>Personalized Matchmaking</li>
+        <li>Multiple Community Choices</li>
+        <li>Confidential & Secure</li>
+      </ul>
+      <p>Royal Matrimonial stands for trust and quality matchmaking. With years of experience and a vast network, we promise the highest standards of service for matrimonial seekers.</p>
+    </div>
+    <div class="site-info-box" tabindex="0">
+      <h3>Royal Matrimonial Services</h3>
+      <p>Our services cover end-to-end matchmaking processes including profile verification, personalized recommendations, communication facilitation, and dedicated relationship managers to assist during your journey.</p>
+      <p>We employ latest technologies combined with traditional matchmaking principles to create meaningful unions.</p>
+    </div>
+    <div class="text-center">
+      <button class="btn-top-read" aria-label="Read more about Royal Matrimonial">Read More</button>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" aria-labelledby="faq-title" role="region" tabindex="-1">
+    <h2 id="faq-title">FAQs of Best Matrimonial Services in Delhi</h2>
+    <details>
+      <summary>What is Royal Matrimonial’s community?</summary>
+      <p>Royal Matrimonial focuses on bringing together verified singles from various communities throughout Delhi, offering tailored matchmaking to suit cultural preferences.</p>
+    </details>
+    <details>
+      <summary>How does Royal Matrimonial verify profiles?</summary>
+      <p>We use a combination of direct verification with users, government ID checks, and AI-based tools to ensure authenticity and reduce fake profiles.</p>
+    </details>
+    <details>
+      <summary>What are the membership options?</summary>
+      <p>We offer Basic, Matrimonial, and Elite membership plans to fit different needs including profile visibility, communication limits, and matchmaking support.</p>
+    </details>
+    <details>
+      <summary>How is my privacy protected?</summary>
+      <p>Your personal data is secured with end-to-end encryption and accessible only to authorized team members under strict confidentiality terms.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" aria-label="Website Footer">
+    <div class="footer-container">
+      <div class="vertical-brand" aria-hidden="true">ROYAL MATRIMONIAL</div>
+      <div class="footer-col" aria-label="Company Information">
+        <h3>ROYAL MATRIMONIAL</h3>
+        <p>Your trusted matrimonial partner in Delhi connecting thousands with verified profiles to create meaningful relationships.</p>
+      </div>
+      <div class="footer-col" aria-label="Quick Links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home" tabindex="0">Home</a></li>
+          <li><a href="#profiles" tabindex="0">Profiles</a></li>
+          <li><a href="#plans" tabindex="0">Plans</a></li>
+          <li><a href="#contact" tabindex="0">Contact</a></li>
+          <li><a href="#faq-title" tabindex="0">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" aria-label="Contact Information">
+        <h4>Contact Us</h4>
+        <address>
+          <p>Royal Matrimonial</p>
+          <p>123 Matchmaker Street,<br>Connaught Place, Delhi, India</p>
+          <p>Phone: +91 12345 67890</p>
+          <p>Email: support@royalmatrimonial.in</p>
+        </address>
+      </div>
+      <div class="footer-col" aria-label="Follow Us on Social Media">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" tabindex="0" rel="noopener noreferrer" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.325v21.351c0 .733.592 1.324 1.325 1.324h11.494v-9.294H9.691v-3.622h3.783V8.413c0-3.743 2.293-5.786 5.645-5.786 1.605 0 2.986.119 3.388.172v3.93l-2.328.001c-1.823 0-2.175.868-2.175 2.14v2.805h4.349l-.567 3.622h-3.782v9.294h7.422c.733 0 1.325-.592 1.325-1.324v-21.351c0-.733-.592-1.325-1.325-1.325z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" tabindex="0" rel="noopener noreferrer" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.947 4.947 0 002.165-2.724c-.951.568-2.005.982-3.127 1.203a4.928 4.928 0 00-8.399 4.49A13.978 13.978 0 011.671 3.15 4.922 4.922 0 003.195 9.86a4.916 4.916 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084c.627 1.956 2.444 3.377 4.604 3.415a9.872 9.872 0 01-6.102 2.101c-.39 0-.779-.023-1.17-.067a13.945 13.945 0 007.557 2.209c9.053 0 14.002-7.496 14.002-13.986 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" tabindex="0" rel="noopener noreferrer" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.342 3.608 1.317.975.975 1.255 2.242 1.317 3.608.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.342 2.633-1.317 3.608-.975.975-2.242 1.255-3.608 1.317-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.342-3.608-1.317-.975-.975-1.255-2.242-1.317-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.342-2.633 1.317-3.608.975-.975 2.242-1.255 3.608-1.317C8.416 2.175 8.796 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072-1.565.073-3.045.39-4.182 1.527C1.39 2.9 1.075 4.38 1.002 5.945c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.073 1.565.39 3.045 1.527 4.182 1.137 1.137 2.617 1.454 4.182 1.527 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.565-.073 3.045-.39 4.182-1.527 1.137-1.137 1.454-2.617 1.527-4.182.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.073-1.565-.39-3.045-1.527-4.182C19.982.392 18.502.075 16.937.002 15.657-.058 15.249-.072 12-.072zM12 5.838A6.163 6.163 0 105.838 12 6.165 6.165 0 0012 5.838zm0 10.164A3.999 3.999 0 118 12a3.999 3.999 0 014 4zm6.406-11.845a1.44 1.44 0 11-1.442-1.44 1.44 1.44 0 011.442 1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2024 Royal Matrimonial - All Rights Reserved</div>
+  </footer>
+
+  <script>
+    // Navigation mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      if (mobileMenu.hasAttribute('hidden')) {
+        mobileMenu.removeAttribute('hidden');
+      } else {
+        mobileMenu.setAttribute('hidden', '');
+      }
+    });
+
+    // Customer Success Stories Tabs
+    const tabs = document.querySelectorAll('.story-tab-btn');
+    const contents = document.querySelectorAll('.story-content');
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        // Reset all tabs
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+        // Reset all contents
+        contents.forEach(c => {
+          c.classList.remove('active');
+          c.setAttribute('tabindex', '-1');
+          c.hidden = true;
+        });
+        // Activate current tab & content
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        contents[index].classList.add('active');
+        contents[index].hidden = false;
+        contents[index].setAttribute('tabindex', '0');
+        contents[index].focus();
+      });
+    });
+
+    // Optional: Mask input fields for age inputs to allow only numbers
+    // Can be enhanced as needed.
+
+  </script>
+
+</body>
+</html>
